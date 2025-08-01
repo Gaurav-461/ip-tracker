@@ -31,7 +31,7 @@ A modern, responsive web application that tracks and displays detailed informati
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Gaurav-461/ip-tracker.git
    cd ip-tracker
    ```
 
