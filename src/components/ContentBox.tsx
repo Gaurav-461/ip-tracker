@@ -1,6 +1,7 @@
 import type { IPInfo, CountryInfo } from "../types/ApiResponse";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import TabContainer from "./TabContainer";
+import { useMediaQuery } from "react-responsive";
 
 type ContentBoxProps = {
   content: IPInfo;
@@ -8,6 +9,8 @@ type ContentBoxProps = {
 };
 
 const ContentBox = ({ content, country }: ContentBoxProps) => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
   if (!content.ip && !content.country_name)
     return (
       <div className="flex items-center justify-center h-96 max-sm:text-sm">
@@ -33,7 +36,7 @@ const ContentBox = ({ content, country }: ContentBoxProps) => {
           center={[content.latitude, content.longitude]}
           zoom={1.5}
           scrollWheelZoom={false}
-          dragging={true}
+          dragging={isMobile ? false : true}
           touchZoom={true}
         >
           <TileLayer
