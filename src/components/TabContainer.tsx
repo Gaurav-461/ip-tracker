@@ -164,7 +164,7 @@ const TabContainer = ({ content, country }: TabContainerProps) => {
 
       {/* Download & Print Tab */}
       <TabsContent value="download-print-info">
-        <div className="flex gap-4 mt-10">
+        <div className="w-fit mx-auto my-10">
           <PDFDownloadLink
             className="cursor-pointer bg-black text-white dark:bg-white/95 font-semibold text-sm flex items-center justify-center dark:text-black py-1 px-4 rounded-md"
             document={<MyDocument content={content} country={country} />}
